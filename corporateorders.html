@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulk Orders</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style/styles_co.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style/styles_co.css">
+    <link rel="stylesheet" href="style/mediaqueries.css"> 
 </head>
 <body>
 <div class="main-co-content">
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="Logo"> <!-- Your logo -->
+        <a href="#home" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+        <div class="hamburger" id="hamburger">
+            <img src="assets/hamburger_icon.svg" alt="Hamburger">
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="bulkorders.html">BULK ORDERS</a></li>
-            <li><a href="corporateorders.html">CORPORATE ORDERS</a></li>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#clients">CLIENTS</a></li>
+            <li><a href="index.html#work">WORK</a></li>
+            <li><a href="index.html#our-story">OUR STORY</a></li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
         <div class="navbar-icons">
@@ -122,6 +125,16 @@
 
 
 <script>
+
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+
     const backToTopBtn = document.getElementById('backToTopBtn');
 
         window.onscroll = function () {
