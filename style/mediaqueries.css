@@ -281,6 +281,12 @@
         margin-top: 10px;
     }
 
+    .order-types img {
+        height: 100%; /* Maintain aspect ratio */
+        width: 100%; /* Adjust the width based on your requirement */
+        padding: 0px; /* Adjust padding as needed */
+      }
+
     .gift-occasion {
         font-family: 'Gotham Book', sans-serif;
         color: #506C60;
