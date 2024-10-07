@@ -141,6 +141,7 @@
 
     /* Adjust the hamburger menu's color */
     .hamburger img {
+        display: block;
         padding: 10px;
     }
 
