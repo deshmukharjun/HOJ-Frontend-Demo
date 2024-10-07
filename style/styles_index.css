@@ -282,14 +282,15 @@ section {
   display: flex; /* Flexbox for centering */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  gap: 40px; /* Space between the images */
+  gap: 5px; /* Space between the images */
   width: 100%; /* Ensure it takes the full width */
   padding: 20px; /* Optional padding for spacing */
 }
 
 .celeb-clients-img img {
-  width: 100%;
+  width: 25%;
   height: 100%;
+  display: flex;
 }
 
 
@@ -363,7 +364,6 @@ section {
 }
 
 .image-container img {
-  margin-right: 20px;
   width: 100%; /* Adjust the image width */
   max-width: 500px; /* Ensure the image doesn't stretch */
   border-radius: 8px;

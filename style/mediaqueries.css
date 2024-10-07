@@ -147,9 +147,24 @@
 
     /* Fix for no content overlapping the hamburger */
     .navbar {
-        padding: 10px;
-        position: relative;
+        padding: 15px;
+        position: fixed;
         z-index: 1000; /* Make sure the navbar stays behind the hamburger */
+    }
+
+    .celeb-clients-img {
+        display: flex; /* Flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        gap: 5px; /* Space between the images */
+        width: 100%; /* Ensure it takes the full width */
+        padding: 10px; /* Optional padding for spacing */
+      }
+
+    .celeb-clients-img img {
+        width: 25%;
+        height: 100%;
+        display: flex;
     }
 
     .clients-img img {
@@ -218,6 +233,7 @@
     }
 
     #home{
+        margin-top: 100px;
         min-height: 200px;
         padding: 10px;
     }
@@ -242,7 +258,7 @@
         color: #C1AB7A;
         font-weight: 100;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2rem;
         margin-top: 50px;
     }
 
@@ -251,7 +267,7 @@
         color: #C1AB7A;
         font-weight: 100;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin-top: 10px;
     }
 
@@ -260,7 +276,7 @@
         color: #C1AB7A;
         font-weight: 100;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin-bottom: 10px;
         margin-top: 10px;
     }
