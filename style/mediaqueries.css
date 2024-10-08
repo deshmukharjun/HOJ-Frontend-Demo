@@ -19,6 +19,15 @@
         margin-bottom: 50px;
     }
 
+    .gallery-pagination span {
+        height: 5px;
+        width: 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 4px;
+      }
+
     label {
         font-size: 0.7rem;
         font-family: 'Gotham';
@@ -194,18 +203,17 @@
     }
 
     .celeb-clients-img {
-        display: flex; /* Flexbox for centering */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        gap: 5px; /* Space between the images */
-        width: 100%; /* Ensure it takes the full width */
-        padding: 10px; /* Optional padding for spacing */
-      }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        width: 100%;
+        padding: 5px;
+    }
 
     .celeb-clients-img img {
-        width: 25%;
-        height: 100%;
-        display: flex;
+        width: calc(50% - 5px); /* Adjust width to 50% minus the gap */
     }
 
     .clients-img img {
@@ -418,3 +426,24 @@
         font-size: 20px;
     }
 }
+
+
+/* Style the Back to Top button */
+#backToTopBtn {
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    padding-top: 3px;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place when scrolling */
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right of the screen */
+    z-index: 99; /* Stay above other elements */
+    font-size: 18px; /* Adjust the size */
+    border: 2px solid #FCF8ED;
+    outline: none; /* Remove outline */
+    background-color: #516D61; /* Dark grey background */
+    color: #FCF8ED; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50px; /* Rounded corners */
+  }

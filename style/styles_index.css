@@ -323,13 +323,11 @@ section {
   height: 100%; /* Maintain aspect ratio */
   width: 100%; /* Adjust the width based on your requirement */
   padding: 10px; /* Adjust padding as needed */
-  transition: all 0.1s ease-in-out;
+  transition: transform 0.2s ease;
 }
 
 .order-types img:hover{
-  height: 97%;
-  width: 97%;
-  padding: 10px;
+  transform: scale(1.01);
 }
 
 
