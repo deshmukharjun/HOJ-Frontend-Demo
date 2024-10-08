@@ -2,14 +2,17 @@
 @media (max-width: 768px) {
 
     html,body{
+        background-color: #FCF8ED;
         max-width: 100vw;
         overflow-x: hidden ;
     }
 
     #work {
+        margin-top: 20px;
+        margin-bottom: 20px;
         background-color: #FCF8ED;
         padding: 10px;
-        min-height: 150px;
+        min-height: 250px;
     }
       /* Gallery Grid */
     .gallery {
@@ -62,10 +65,19 @@
         margin-bottom: 20px;
     }
 
+    .gallery-slide img {
+        margin-bottom: 3px;
+        width: 100%; /* Make images responsive */
+        height: 100%; /* Fixed height for all images */
+        object-fit: fill; /* Cover the container, maintaining aspect ratio */
+      }
+
     #clients {
+        margin-top: 20px;
+        margin-bottom: 20px;
         background-color: #FCF8ED;
         padding: 10px;
-        min-height: 150px;
+        min-height: 250px;
     }
 
     #our-story {
@@ -105,9 +117,9 @@
     
 
     .gallery-carousel {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-top: 50px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -283,6 +295,7 @@
     }
 
     #home{
+        margin-bottom: 20px;
         margin-top: 100px;
         min-height: 200px;
         padding: 10px;
