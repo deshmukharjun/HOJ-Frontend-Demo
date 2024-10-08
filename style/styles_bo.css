@@ -61,6 +61,13 @@ html, body {
     top: 0;
     z-index: 1000;
   }
+
+  
+  .hamburger img {
+      display: none;
+      padding: 10px;
+  }
+
   
   .nav-links {
     list-style: none;
