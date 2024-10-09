@@ -62,7 +62,7 @@ html, body {
     z-index: 1000;
   }
 
-  .hamburger img {
+.hamburger img {
     display: none;
     padding: 10px;
 }
