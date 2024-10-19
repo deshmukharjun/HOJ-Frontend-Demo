@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="main-bo-content">
-    <!-- Navbar -->
+    <!-- Navbar --> 
     <nav class="navbar">
         <a href="#home" class="logo"><img src="assets/logo.png" alt="Logo"></a>
         <div class="hamburger" id="hamburger">
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <div class="product"><img src="assets/bo/bulk1.png" alt="Product 1"></div>
             <div class="product"><img src="assets/bo/bulk2.png" alt="Product 2"></div>
             <div class="product"><img src="assets/bo/bulk3.png" alt="Product 3"></div>
@@ -87,14 +87,12 @@
 
         <!-- Product Count -->
         <p class="product-count">You're viewing 1-16 of 28 products</p>
-
         
     </section>
 
     <button id="backToTopBtn" title="Go to top">
         <span class="material-symbols-outlined">keyboard_arrow_up</span>
     </button>
-
 
     <footer>
         <div class="footer-nav">
@@ -118,42 +116,26 @@
             <a href="#">BULK ORDERS</a>
         </div>
     </footer>
-
-
 </div>
 
-
-
-
-
-
-
-                
-
-
-
-
 <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-const backToTopBtn = document.getElementById('backToTopBtn');
-
+    const backToTopBtn = document.getElementById('backToTopBtn');
     window.onscroll = function () {
         scrollFunction();
     };
 
     function scrollFunction() {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopBtn.style.display = "block";  // Show the button
+            backToTopBtn.style.display = "block";
         } else {
-            backToTopBtn.style.display = "none";  // Hide the button
+            backToTopBtn.style.display = "none";
         }
     }
 
@@ -164,28 +146,36 @@ const backToTopBtn = document.getElementById('backToTopBtn');
         });
     });
 
+    // Shuffle function for the gallery
+    function shuffleGallery() {
+        const gallery = document.getElementById('gallery');
+        const products = Array.from(gallery.children);
+        for (let i = products.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [products[i], products[j]] = [products[j], products[i]];
+        }
+        gallery.innerHTML = '';
+        products.forEach(product => gallery.appendChild(product));
+    }
 
-
-
-
-    // Example script to handle sorting, filtering, and pagination
+    // Event listeners for sort and filter
     document.getElementById('filter').addEventListener('change', function() {
-        let filterValue = this.value;
-        console.log('Filter by: ', filterValue);
+        shuffleGallery();
+        console.log('Filter by:', this.value);
     });
 
     document.getElementById('sort').addEventListener('change', function() {
-        let sortValue = this.value;
-        console.log('Sort by: ', sortValue);
+        shuffleGallery();
+        console.log('Sort by:', this.value);
     });
 
-    // Pagination Logic: You could update the gallery to show next set of products
+    // Pagination Logic: Update the gallery for the selected page
     let currentPage = 1;
     const productsPerPage = 16;
 
     function showPage(page) {
         currentPage = page;
-        console.log('Showing page: ', page);
+        console.log('Showing page:', page);
     }
 </script>
 </body>

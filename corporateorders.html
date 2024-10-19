@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulk Orders</title>
+    <title>Corporate Orders</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style/styles_co.css">
     <link rel="stylesheet" href="style/mediaqueries.css"> 
@@ -30,7 +30,7 @@
         </div>
     </nav>
 
-    <!-- Bulk Orders Section -->
+    <!-- Corporate Orders Section -->
     <section id="corporate-orders">
         <h2 class="title">Corporate Orders</h2>
 
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <div class="product"><img src="assets/co/corporate1.png" alt="Product 1"></div>
             <div class="product"><img src="assets/co/corporate2.png" alt="Product 2"></div>
             <div class="product"><img src="assets/co/corporate3.png" alt="Product 3"></div>
@@ -73,10 +73,8 @@
             <div class="product"><img src="assets/co/corporate13.png" alt="Product 13"></div>
             <div class="product"><img src="assets/co/corporate14.png" alt="Product 14"></div>
             <div class="product"><img src="assets/co/corporate15.png" alt="Product 15"></div>
-            <div class="product"><img src="assets/co/corporate16.png" alt="Product 16"></div>
         </div>
 
-        
         <!-- Pagination -->
         <div class="pagination">
             <a href="#">&laquo;</a>
@@ -87,9 +85,9 @@
         </div>
 
         <!-- Product Count -->
-        <p class="product-count">You're viewing 1-16 of 28 products</p>
-        
+        <p class="product-count">You're viewing 1-15 of 30 products</p>
     </section>
+
     <button id="backToTopBtn" title="Go to top">
         <span class="material-symbols-outlined">keyboard_arrow_up</span>
     </button>
@@ -113,76 +111,70 @@
         <div class="footer-bottom">
             <a href="#">T&C</a> | 
             <a href="#">PRIVACY POLICY</a> | 
-            <a href="#">BULK ORDERS</a>
+            <a href="#">CORPORATE ORDERS</a>
         </div>
     </footer>
 </div>
 
-
-
-
-
-
-
 <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-
-    const backToTopBtn = document.getElementById('backToTopBtn');
-
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = "block";  // Show the button
-            } else {
-                backToTopBtn.style.display = "none";  // Hide the button
-            }
-        }
-
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
 
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.onscroll = function () {
+        scrollFunction();
+    };
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
 
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
+    // Shuffle function for the gallery
+    function shuffleGallery() {
+        const gallery = document.querySelector('.gallery');
+        const products = Array.from(gallery.children);
+        for (let i = products.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [products[i], products[j]] = [products[j], products[i]];
+        }
+        gallery.innerHTML = '';
+        products.forEach(product => gallery.appendChild(product));
+    }
 
-    // Example script to handle sorting, filtering, and pagination
+    // Event listeners for sort and filter
     document.getElementById('filter').addEventListener('change', function() {
-        let filterValue = this.value;
-        console.log('Filter by: ', filterValue);
+        shuffleGallery();
+        console.log('Filter by:', this.value);
     });
 
     document.getElementById('sort').addEventListener('change', function() {
-        let sortValue = this.value;
-        console.log('Sort by: ', sortValue);
+        shuffleGallery();
+        console.log('Sort by:', this.value);
     });
 
-    // Pagination Logic: You could update the gallery to show next set of products
+    // Pagination Logic: Update the gallery for the selected page
     let currentPage = 1;
-    const productsPerPage = 16;
+    const productsPerPage = 15;
 
     function showPage(page) {
         currentPage = page;
-        console.log('Showing page: ', page);
+        console.log('Showing page:', page);
     }
 </script>
-
-
-
-
 </body>
 </html>
